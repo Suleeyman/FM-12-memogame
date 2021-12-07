@@ -42,6 +42,11 @@ class Game {
     _getLocalStorage() {
         const data = JSON.parse(localStorage.getItem('data'));
 
+        if (data === null) {
+            window.open('./index.html', '_self');
+            return;
+        }
+
         this._size = +data.size[0];
         this._numOfPairs = this._size**2 / 2
         this._nbPlayers = +data.nbPlayers;
