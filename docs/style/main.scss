@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@700&display=swap');
+
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* VARIABLES */
+:root {
+    --primary-bgc-midnight:hsla(206, 45%, 15%, 1);
+    --primary-bgc-white: hsla(0, 0%, 99%, 1);
+    --primary-color-white: hsla(0, 0%, 99%, 1);
+    --secondary-color-gray: rgb(75, 111, 133);
+    --secondary-bgc-bluegray: hsla(203, 28%, 79%, 1);
+    --primary-hover-state: hsla(205, 38%, 55%, 1);
+    --button-orange:  hsla(37, 98%, 54%, 1);
+    --button-orange-hover: hsla(37, 100%, 65%, 1);
+}
+/* --------- */
+
+/* CONTAINER EXTEND */
+
+%container {
+    padding-left: calc(50% - calc(100% - 48px) / 2);
+    padding-right: calc(50% - calc(100% - 48px) / 2);
+}
+
+@media only screen and (min-width: 800px) {
+    %container {
+        padding-left: calc(50% - calc(100% - 114px) / 2);
+        padding-right: calc(50% - calc(100% - 114px) / 2);
+    }
+}
+ 
+@media only screen and (min-width: 1100px) {
+    %container {
+        padding-left: calc(50% - calc(100% - 600px) / 2);
+        padding-right: calc(50% - calc(100% - 600px) / 2);
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    %container {
+        padding-left: calc(50% - calc(100% - 786px) / 2);
+        padding-right: calc(50% - calc(100% - 786px) / 2);
+    }
+}
+
+/* --------------- */
+
+h3 {
+    font-size: 15px;
+}
+
+label {
+    font-size: 1rem;
+}
+
+body {
+    @extend %container;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 64px;
+    padding-bottom: 64px;
+    background-color: var(--primary-bgc-midnight);
+    min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 25px;
+    background-color: var(--primary-bgc-white);
+    border-radius: 10px;
+}
+
+.box-label {
+    position: relative;
+    height: 80px;
+    
+    & h3 {
+        color: var(--secondary-color-gray);
+        font-weight: 700;
+        font-size: 15px;
+        width: 100%;
+    }
+    
+    &:nth-child(2n+1) > div > label {
+        padding: 10px 0;
+        width: 135px;
+        text-align: center;
+    }
+
+    &:nth-child(2) > div > label {
+        padding: 10px 27px;
+    }
+    
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0; left: 0;
+        border-radius: 33%;
+        width: 13%;
+        height: 1px;
+        background-color: var(--secondary-bgc-bluegray);
+    }
+}
+
+.label--container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+label {
+    display: inline-block;
+    flex-basis: 100%;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 10px;
+    color: var(--primary-bgc-white);
+    background-color: var(--secondary-bgc-bluegray);
+    border-radius: 26px;
+    transition: .2s ease;
+
+    &:hover {
+        background-color: var(--primary-hover-state);
+    }
+}
+
+input {
+    display: none;
+    pointer-events: none;
+}
+
+input:checked {
+
+    &+label {
+        background-color: var(--primary-bgc-midnight);
+    }
+}
+
+button[type=submit] {
+    background-color: var(--button-orange);
+    color: var(--primary-color-white);
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    border: 0;
+    border-radius: 26px;
+    padding: 13px 0;
+    transition: .2s ease;
+
+    &:hover {
+        background-color: var(--button-orange-hover);
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    form {
+        padding: 56px;
+    }
+}
