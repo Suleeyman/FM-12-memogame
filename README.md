@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Submited in FM](https://your-solution-url.com)
-- Live Site URL: [Github Page](https://your-live-site-url.com)
+- Solution URL: [Submited in FM](https://www.frontendmentor.io/solutions/memory-game-using-scss-8N0qB3q-f)
+- Live Site URL: [Github Page](https://suleeyman.github.io/FM-12-memogame/)
 
 ## My process
 
